@@ -1,0 +1,47 @@
+.header {
+	position: fixed;
+	width: 100%;
+	height: 77px;
+	z-index: 10;
+
+	.container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 11px;
+	}
+
+	&__logo {
+		span {
+			display: block;
+			width: 145px;
+			text-transform: uppercase;
+			color: $text;
+			@include medium;
+
+			&:last-child {
+				text-align: right;
+			}
+		}
+	}
+}
+
+.btn-menu {
+	&._active {
+		.btn-menu__burger {
+			display: none;
+		}
+
+		.btn-menu__cross {
+			display: block;
+		}
+	}
+
+	&__cross {
+		display: none;
+	}
+}
+
+.menu {
+	display: none;
+}
