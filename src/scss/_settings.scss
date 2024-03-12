@@ -30,6 +30,10 @@ ul {
 button {
 	border: none;
 	cursor: pointer;
+
+	&:focus-visible {
+		outline-color: $pastel;
+	}
 }
 
 a {
@@ -53,6 +57,7 @@ a {
 	border-radius: 1000px;
 	background-color: $white;
 	column-gap: 5px;
+	flex-shrink: 0;
 }
 
 
@@ -62,6 +67,7 @@ a {
 	border-radius: 50%;
 	display: flex;
 	background: $white;
+	flex-shrink: 0;
 
 	> svg {
 		margin: auto;

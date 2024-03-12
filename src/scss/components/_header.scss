@@ -43,5 +43,62 @@
 }
 
 .menu {
-	display: none;
+	position: absolute;
+	top: 72px;
+	width: 363px;
+	opacity: 0;
+	visibility: hidden;
+	transition: all .4s;
+	z-index: -1;
+
+	&._active {
+		opacity: 1;
+		visibility: visible;
+		z-index: 20;
+
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		row-gap: 24px;
+		margin-bottom: 6px;
+		padding: 32px 24px;
+		box-shadow: 0 4px 20px 0 rgba(191, 218, 228, 0.5);
+		background: $white;
+		border-radius: 16px;
+	}
+
+	&__item {
+		width: max-content;
+
+		a {
+			@include title;
+			color: $text;
+			display: block;
+		}
+	}
+
+	&__btn {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		column-gap: 20px;
+		border-radius: 16px;
+		@include title;
+		color: $white;
+		width: 100%;
+		padding: 23px;
+	}
+
+	&__email {
+		margin-bottom: 6px;
+		box-shadow: 0 4px 20px 0 rgba(191, 218, 228, 0.5);
+		background: $saturated;
+	}
+
+	&__modal-btn {
+		box-shadow: 0 4px 20px 0 rgba(191, 218, 228, 0.5);
+		background: $text;
+	}
 }
