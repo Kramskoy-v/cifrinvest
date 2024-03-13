@@ -8,7 +8,12 @@
 @import "components/header";
 @import "components/footer";
 @import "components/animation";
+@import "components/modal-form";
 
+// подключения страниц
 @import "pages/home";
 @import "pages/not-found";
 @import "pages/privacy-politic";
+
+// подключения медиа запросов
+@import "pages/home-media";

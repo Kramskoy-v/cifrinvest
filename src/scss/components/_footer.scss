@@ -56,3 +56,27 @@
 		color: rgba(255, 255, 255, 0.4);
 	}
 }
+
+@media (max-width: 1439px) {
+	.footer {
+		.container {
+			height: 562px;
+			padding-top: 20px;
+		}
+		&__title {
+			margin-bottom: 40px;
+			font-size: 18px;
+		}
+		&__email {
+			font-size: 64px;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.footer {
+		&__email {
+			font-size: 38px;
+		}
+	}
+}

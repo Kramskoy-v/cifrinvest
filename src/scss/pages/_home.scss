@@ -3,9 +3,9 @@
 		.container {
 			padding: 222px 83px 0 63px;
 			position: relative;
-
+			overflow: hidden;
 			&::before {
-				content: '';
+				content: "";
 				background-image: url("../img/spot_left.svg");
 				background-size: cover;
 				background-repeat: no-repeat;
@@ -16,11 +16,11 @@
 				top: 10%;
 				left: 3%;
 				z-index: 1;
-				animation: rotateEl 3s linear infinite;
+				//animation: rotateEl 3s linear infinite;
 			}
 
 			&::after {
-				content: '';
+				content: "";
 				background-image: url("../img/spot_right.svg");
 				background-size: cover;
 				background-repeat: no-repeat;
@@ -31,7 +31,7 @@
 				top: 0;
 				right: 2%;
 				z-index: 1;
-				animation: rotateEl 3s linear infinite;
+				//animation: rotateEl 3s linear infinite;
 			}
 		}
 
@@ -52,7 +52,6 @@
 			z-index: 5;
 		}
 
-
 		&__top {
 			display: flex;
 			justify-content: space-between;
@@ -72,10 +71,8 @@
 				max-width: 216px;
 				@include medium;
 				text-align: right;
-
 			}
 		}
-
 
 		&__statistics {
 			display: grid;
@@ -97,12 +94,16 @@
 			color: $text;
 			border-radius: 16px;
 			backdrop-filter: blur(30px);
-			background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.4) 100%);
+			background: linear-gradient(
+				180deg,
+				rgba(255, 255, 255, 0.4) 0%,
+				rgba(255, 255, 255, 0.4) 100%
+			);
 			box-shadow: 0 4px 20px 0 rgba(191, 218, 228, 0.5);
 			position: relative;
 			border: 1px solid $white;
 			border-bottom: none;
-
+			position: relative;
 
 			&:nth-child(1) {
 				grid-area: item1;
@@ -117,7 +118,7 @@
 			}
 
 			&::after {
-				content: '';
+				content: "";
 				width: 8px;
 				height: 8px;
 				position: absolute;
@@ -136,7 +137,6 @@
 			p {
 				@include medium;
 			}
-
 		}
 
 		.cards {
@@ -144,20 +144,19 @@
 			justify-content: space-between;
 			align-items: flex-end;
 			column-gap: 6px;
-			position: relative;
-
 
 			&__item {
 				position: relative;
 				width: 33%;
-
-
-				img {
-					left: 0;
+				overflow: hidden;
+				border-radius: 16px;
+				cursor: pointer;
+				canvas {
+					position: absolute;
 					top: 0;
+					left: 0;
 					width: 100%;
 					height: 100%;
-					position: absolute;
 					z-index: -1;
 				}
 
@@ -193,7 +192,7 @@
 				padding: 26px;
 
 				&::after {
-					content: '';
+					content: "";
 					width: 50px;
 					height: 50px;
 					background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.397 1.68156L16.2335 8.5181L16.3943 9.00024M16.3943 9.00024H1.28711M16.3943 9.00024L16.2335 9.48239L9.397 16.3189" stroke="%230B3948" stroke-width="1.5" stroke-linejoin="bevel" /></svg>');
@@ -214,7 +213,6 @@
 				color: $white;
 			}
 
-
 			&__price {
 				display: block;
 				@include medium;
@@ -227,7 +225,6 @@
 				color: rgba(255, 255, 255, 0.8);
 			}
 		}
-
 	}
 
 	.aboutus {
@@ -302,7 +299,10 @@
 			position: absolute;
 			top: 0;
 			left: 0;
-			background-image: linear-gradient(rgba(206, 234, 245, 0) 13%, $pastel 40%);
+			background-image: linear-gradient(
+				rgba(206, 234, 245, 0) 13%,
+				$pastel 40%
+			);
 			z-index: -1;
 		}
 
@@ -403,7 +403,7 @@
 					height: max-content;
 
 					&::before {
-						content: '';
+						content: "";
 						display: inline-block;
 						width: 8px;
 						height: 8px;
@@ -411,7 +411,6 @@
 						border-radius: 50%;
 						background-color: $white;
 					}
-
 				}
 			}
 
@@ -491,7 +490,6 @@
 
 				&:hover {
 					&::placeholder {
-
 						color: $white;
 					}
 				}
@@ -512,14 +510,22 @@
 				width: 91px;
 				height: 40px;
 				backdrop-filter: blur(30px);
-				background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%);
+				background: linear-gradient(
+					180deg,
+					rgba(255, 255, 255, 0.1) 0%,
+					rgba(255, 255, 255, 0.1) 100%
+				);
 				cursor: pointer;
 				@include medium;
 				color: rgba(255, 255, 255, 0.5);
 			}
 
 			input[type="radio"]:checked + label {
-				background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.3) 100%);
+				background: linear-gradient(
+					180deg,
+					rgba(255, 255, 255, 0.3) 0%,
+					rgba(255, 255, 255, 0.3) 100%
+				);
 				color: $white;
 			}
 
@@ -534,11 +540,13 @@
 				column-gap: 3px;
 				align-items: center;
 
-				&:first-of-type {
+				&--top {
 					margin-bottom: 55px;
 				}
 			}
-
+			&__radio {
+				flex-shrink: 0;
+			}
 			&__btn-submit {
 				margin-right: 17px;
 			}
@@ -552,7 +560,6 @@
 					color: rgba(255, 255, 255, 0.4);
 					text-decoration: underline;
 				}
-
 			}
 		}
 
@@ -563,7 +570,10 @@
 			top: 0;
 			left: 0;
 			z-index: -1;
-			background-image: linear-gradient(rgba(33, 131, 166, 0) 0%, $saturated 32%);
+			background-image: linear-gradient(
+				rgba(33, 131, 166, 0) 0%,
+				$saturated 32%
+			);
 		}
 	}
 
@@ -582,7 +592,6 @@
 		&__title {
 			width: 46.5%;
 			font-size: 64px;
-
 		}
 
 		&__list {
@@ -619,7 +628,7 @@
 			width: 22px;
 			height: 22px;
 			border: 3px solid $dark;
-			background-color: #3BD867;
+			background-color: #3bd867;
 			position: absolute;
 			right: 10px;
 			bottom: 2px;
@@ -695,6 +704,7 @@
 				width: 282px;
 				height: 126px;
 				flex-shrink: 0;
+				border-radius: 10px;
 				overflow: hidden;
 
 				img {
@@ -740,11 +750,11 @@
 
 		&__item {
 			display: grid;
-			grid-template-columns:  216px auto;
+			grid-template-columns: 216px auto;
 			grid-template-rows: auto auto;
 			grid-template-areas:
-			"digit title"
-			" . desc";
+				"digit title"
+				" . desc";
 
 			span {
 				@include title;
@@ -801,7 +811,11 @@
 			align-items: center;
 			padding: 16px 12px 12px 22px;
 			box-shadow: 0 4px 20px 0 rgba(191, 218, 228, 0.5);
-			background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.6) 100%);
+			background: linear-gradient(
+				180deg,
+				rgba(255, 255, 255, 0.6) 0%,
+				rgba(255, 255, 255, 0.6) 100%
+			);
 			border-radius: 16px;
 			cursor: pointer;
 
@@ -820,7 +834,6 @@
 				.faq__text {
 					display: block;
 				}
-
 			}
 		}
 
@@ -828,6 +841,8 @@
 			grid-column: 2/1;
 			color: rgba(0, 34, 46, 0.8);
 			display: none;
+			font-size: 14px;
+			line-height: 140%;
 		}
 
 		&__bg {
@@ -839,6 +854,20 @@
 			background-image: url("../img/aboutus-column_bg.svg");
 			background-repeat: repeat-x;
 			z-index: -1;
+		}
+	}
+	.overlay {
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		background-color: rgba(0, 34, 46, 0.5);
+		z-index: -1;
+		display: none;
+		&._is-active {
+			display: block;
+			z-index: 15;
 		}
 	}
 }

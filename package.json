@@ -37,5 +37,8 @@
     "stylelint-order": "5.0.0",
     "webpack": "5.90.3",
     "webpack-stream": "7.0.0"
+  },
+  "dependencies": {
+    "three": "^0.122.0"
   }
 }

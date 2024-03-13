@@ -48,14 +48,13 @@
 	width: 363px;
 	opacity: 0;
 	visibility: hidden;
-	transition: all .4s;
+	transition: all 0.4s;
 	z-index: -1;
 
 	&._active {
 		opacity: 1;
 		visibility: visible;
 		z-index: 20;
-
 	}
 
 	&__list {
@@ -100,5 +99,14 @@
 	&__modal-btn {
 		box-shadow: 0 4px 20px 0 rgba(191, 218, 228, 0.5);
 		background: $text;
+	}
+}
+
+@media (max-width: 1439px) {
+	.header {
+		.container {
+			padding-right: 25px;
+			padding-left: 25px;
+		}
 	}
 }

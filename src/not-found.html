@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html lang="ru">
 @include('partials/head.html',{'title': 'Страница не найдена'})
+
 <body>
-@include('partials/header.html')
-<main class="main not-found-page">
-	<div class="container">
-		<h1>404</h1>
-		<h2>Страница, которую вы ищете не найдена</h2>
-		<a href="index.html" class="btn">
-			<span>На главную</span>
-			<svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<path
-					d="M9.39602 2.25773L16.2326 9.09427L16.3933 9.57642M16.3933 9.57642H1.28613M16.3933 9.57642L16.2326 10.0586L9.39602 16.8951"
-					stroke="#00222E" stroke-width="1.5" stroke-linejoin="bevel"/>
-			</svg>
-		</a>
-	</div>
-	<div class="not-found-page__bg"></div>
-</main>
-<script defer src="js/main.js"></script>
+	@include('partials/header.html')
+	<main class="main not-found-page">
+		<div class="container">
+			<h1>404</h1>
+			<h2>Страница, которую вы ищете не найдена</h2>
+			<a href="index.html" class="btn">
+				<span>На главную</span>
+				<svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M9.39602 2.25773L16.2326 9.09427L16.3933 9.57642M16.3933 9.57642H1.28613M16.3933 9.57642L16.2326 10.0586L9.39602 16.8951"
+						stroke="#00222E" stroke-width="1.5" stroke-linejoin="bevel" />
+				</svg>
+			</a>
+		</div>
+		<div class="not-found-page__bg"></div>
+	</main>
+	<script defer src="js/main.js"></script>
 </body>
+
 </html>
