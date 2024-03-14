@@ -322,12 +322,8 @@
 		}
 
 		.cards {
-			display: grid;
-			grid-template-columns: repeat(2, auto);
-			row-gap: 93px;
-			justify-content: space-between;
-			align-items: center;
-
+			position: relative;
+			height: 1876px;
 			&__item {
 				display: flex;
 				flex-direction: column;
@@ -340,39 +336,46 @@
 				overflow: hidden;
 				background-color: $saturated;
 				cursor: pointer;
+				position: absolute;
+				z-index: 9;
 
-				&:nth-child(1) {
+				&--1 {
 					background-image: url("../img/cases-card_bg1.png");
 				}
 
-				&:nth-child(2) {
-					transform: translateY(147px);
+				&--2 {
+					top: 200px;
+					right: 0;
 					background-image: url("../img/cases-card_bg2.png");
 				}
 
-				&:nth-child(3) {
-					transform: translateX(180px);
-					justify-self: center;
+				&--3 {
+					top: 520px;
+					left: 218px;
 					background-image: url("../img/cases-card_bg3.png");
 				}
 
-				&:nth-child(4) {
-					transform: translate(-72px, 247px);
+				&--4 {
+					top: 766px;
+					right: 143px;
 					background-image: url("../img/cases-card_bg4.png");
 				}
 
-				&:nth-child(5) {
-					transform: translateY(12px);
+				&--5 {
+					top: 1102px;
+					left: 0;
 					background-image: url("../img/cases-card_bg5.png");
 				}
 
-				&:nth-child(6) {
-					transform: translate(73px, 351px);
+				&--6 {
+					top: 1390px;
+					right: 0;
 					background-image: url("../img/cases-card_bg6.png");
 				}
 
-				&:nth-child(7) {
-					transform: translate(288px, 71px);
+				&--7 {
+					top: 1629px;
+					left: 289px;
 					background-image: url("../img/cases-card_bg7.png");
 				}
 
@@ -453,81 +456,11 @@
 			text-align: right;
 		}
 
-		.feedback-form {
+		.template-form {
 			width: 50%;
 			padding-top: 30px;
 			position: relative;
 			z-index: 10;
-
-			input[type="text"] {
-				display: block;
-				width: 100%;
-				height: 40px;
-				padding-bottom: 16px;
-				padding-left: 24px;
-				border: none;
-				background: none;
-				border-bottom: 1px solid $white;
-				@include large;
-				color: $white;
-
-				&:nth-of-type(1) {
-					margin-bottom: 46px;
-				}
-
-				&:nth-of-type(2) {
-					margin-bottom: 37px;
-				}
-
-				&:focus-visible {
-					outline: none;
-				}
-
-				&::placeholder {
-					@include large;
-					color: rgba(255, 255, 255, 0.8);
-				}
-
-				&:hover {
-					&::placeholder {
-						color: $white;
-					}
-				}
-			}
-
-			input[type="radio"] {
-				position: absolute;
-				opacity: 0;
-				z-index: -1;
-				width: 0;
-				height: 0;
-			}
-
-			input[type="radio"] + label {
-				position: relative;
-				border-radius: 1000px;
-				padding: 13px 16px 12px 16px;
-				width: 91px;
-				height: 40px;
-				backdrop-filter: blur(30px);
-				background: linear-gradient(
-					180deg,
-					rgba(255, 255, 255, 0.1) 0%,
-					rgba(255, 255, 255, 0.1) 100%
-				);
-				cursor: pointer;
-				@include medium;
-				color: rgba(255, 255, 255, 0.5);
-			}
-
-			input[type="radio"]:checked + label {
-				background: linear-gradient(
-					180deg,
-					rgba(255, 255, 255, 0.3) 0%,
-					rgba(255, 255, 255, 0.3) 100%
-				);
-				color: $white;
-			}
 
 			&__subtitle {
 				margin-bottom: 21px;

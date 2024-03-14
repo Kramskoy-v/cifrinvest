@@ -61,6 +61,12 @@ a {
 	background-color: $white;
 	column-gap: 5px;
 	flex-shrink: 0;
+	@media (max-width: 767px) {
+		width: 100%;
+		height: 42px;
+		justify-content: center;
+		column-gap: 50px;
+	}
 }
 
 .btn-circle {

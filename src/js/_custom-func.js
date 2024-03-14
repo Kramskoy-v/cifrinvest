@@ -1,3 +1,5 @@
+const { log } = require("three");
+
 // меню
 const menu = document.querySelector(".menu");
 const btnMenu = document.querySelector(".btn-menu");
@@ -63,3 +65,23 @@ if (overlay || closeModal) {
 	overlay.addEventListener("click", toggleOverlay);
 	closeModal.addEventListener("click", toggleOverlay);
 }
+
+// магнитные элементы хедера
+const magneticElements = document.querySelectorAll(".magnetic");
+
+magneticElements.forEach((magElement) => {
+	magElement.addEventListener("mousemove", (e) => {
+		let x = e.offsetX;
+		let y = e.offsetY;
+		let elWidth = magElement.clientWidth / 2;
+		let elHeight = magElement.clientHeight / 2;
+		let moveX = x - elWidth;
+		let moveY = y - elHeight;
+		magElement.style.transform = `translateX(${
+			moveX + 20
+		}px) translateY(${moveY}px)`;
+	});
+	magElement.addEventListener("mouseout", (e) => {
+		magElement.style.transform = ``;
+	});
+});

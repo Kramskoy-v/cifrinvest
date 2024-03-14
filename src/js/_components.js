@@ -1,1 +1,3 @@
-import "./components/_three"
+import "./components/three";
+import "./components/imask";
+import "./components/gsap";

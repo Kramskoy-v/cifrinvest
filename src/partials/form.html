@@ -1,0 +1,31 @@
+<form class="template-form" action="#">
+	<input type="text" placeholder="Ваше имя" name="name-template">
+	<input type="text" placeholder="Номер телефона" name="phone-template" required data-phone>
+	<p class="template-form__subtitle">Удобный способ связи</p>
+	<ul class="template-form__row template-form__row--top">
+		<li class="template-form__radio">
+			<input type="radio" checked name="connection" value="по телефону" id=@mobile-id />
+			<label for="@mobile-id">По телефону</label>
+		</li>
+		<li class="template-form__radio">
+			<input type="radio" name="connection" value="telegram" id=@telegram-id />
+			<label for="@telegram-id">Telegram</label>
+		</li>
+		<li class="template-form__radio">
+			<input type="radio" name="connection" value="whatsApp" id=@whatsApp-id />
+			<label for="@whatsApp-id">WhatsApp</label>
+		</li>
+	</ul>
+	<div class="template-form__row template-form__row--bottom">
+		<button type="submit" class="template-form__btn-submit btn" id=@button-id>
+			<span>Отправить заявку</span>
+			<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path
+					d="M9.397 1.68157L16.2335 8.51811L16.3943 9.00025M16.3943 9.00025H1.28711M16.3943 9.00025L16.2335 9.48239L9.397 16.3189"
+					stroke="#00222E" stroke-width="1.5" stroke-linejoin="bevel" />
+			</svg>
+		</button>
+		<p class="template-form__consent">Нажимая на кнопку “Отправить заявку”, вы соглашаетесь с <a
+				href="privacy-politic.html">политикой конфиденциальности</a></p>
+	</div>
+</form>
