@@ -3,7 +3,7 @@
 		.container {
 			padding: 222px 83px 0 63px;
 			position: relative;
-			overflow: hidden;
+
 			&::before {
 				content: "";
 				background-image: url("../img/spot_left.svg");
@@ -94,7 +94,7 @@
 			color: $text;
 			border-radius: 16px;
 			backdrop-filter: blur(30px);
-			background: linear-gradient(
+			background-image: linear-gradient(
 				180deg,
 				rgba(255, 255, 255, 0.4) 0%,
 				rgba(255, 255, 255, 0.4) 100%
@@ -160,7 +160,7 @@
 					z-index: -1;
 				}
 
-				&:nth-child(1) {
+				&--wave1 {
 					.cards__title {
 						color: $text;
 					}
@@ -175,13 +175,14 @@
 					}
 				}
 
-				&:nth-child(2) {
+				&--wave2 {
 					.cards__price {
 						margin-bottom: 113px;
 					}
 				}
 
-				&:nth-child(3) {
+				&--wave3 {
+					transition: all 0.1s;
 					.cards__price {
 						margin-bottom: 129px;
 					}
@@ -260,13 +261,14 @@
 
 		&__wrapper {
 			overflow: hidden;
+			margin-left: -63px;
 		}
 
 		&__icons {
 			display: flex;
 			column-gap: 56px;
 			height: 80px;
-			transform: translateX(216px);
+			transform: translateX(270px);
 		}
 
 		&__item {
@@ -525,6 +527,7 @@
 		&__title {
 			width: 46.5%;
 			font-size: 64px;
+			height: max-content;
 		}
 
 		&__list {
@@ -532,12 +535,16 @@
 			display: flex;
 			flex-direction: column;
 			row-gap: 24px;
+			overflow: hidden;
 		}
 
 		&__item {
 			display: flex;
 			align-items: center;
 			column-gap: 28px;
+			transition: all 0.3s;
+			opacity: 0.2;
+			transform: translateX(150px) scale(0.8);
 		}
 
 		&__avatar {
@@ -605,6 +612,7 @@
 			grid-template-columns: repeat(4, 324px);
 			column-gap: 36px;
 			transform: translateX(278px);
+			transform: all 0.3s;
 		}
 
 		&__item {
@@ -624,24 +632,20 @@
 			@include title;
 		}
 
-		&__wrapper-companies {
-			overflow: hidden;
-		}
-
 		.companies {
-			width: 2016px;
-			display: flex;
-			column-gap: 6px;
-
 			&__item {
-				width: 282px;
 				height: 126px;
 				flex-shrink: 0;
 				border-radius: 10px;
 				overflow: hidden;
+				display: flex;
 
 				img {
 					object-fit: cover;
+					display: block;
+					max-height: 100%;
+					width: 100%;
+					margin: auto;
 				}
 			}
 		}
@@ -679,6 +683,7 @@
 			display: flex;
 			flex-direction: column;
 			row-gap: 60px;
+			overflow: hidden;
 		}
 
 		&__item {
@@ -688,7 +693,9 @@
 			grid-template-areas:
 				"digit title"
 				" . desc";
-
+			transition: all 0.3s;
+			opacity: 0.1;
+			transform: translateX(150px) scale(0.8);
 			span {
 				@include title;
 				color: rgba(35, 131, 166, 0.3);

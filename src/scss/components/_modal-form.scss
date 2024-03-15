@@ -15,6 +15,10 @@
 	z-index: -1;
 	display: none;
 
+	&::-webkit-scrollbar {
+		width: 0;
+	}
+
 	&__close-btn {
 		width: 36px;
 		height: 36px;
@@ -22,6 +26,7 @@
 		position: absolute;
 		top: 22px;
 		right: 22px;
+		background: $gray;
 	}
 
 	&._is-active {
@@ -64,7 +69,6 @@
 
 		input[type="radio"] {
 			&:checked + label {
-				backdrop-filter: blur(30px);
 				background: #ceeaf5;
 				color: $saturated;
 			}
